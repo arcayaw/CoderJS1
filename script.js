@@ -4,22 +4,22 @@ let seguir;
 
 do {
   //pido sueldo
-  let sueldo = parseFloat(prompt("ingrese el sueldo"));
+  let sueldo = parseFloat(prompt("Ingrese el sueldo del/la Emplead@"));
 
   //valido que el sueldo sea mayor a cero.
   if (sueldo <= 0) {
     alert("Error! El valor debe ser mayor a cero");
-    sueldo = parseFloat(prompt("ingrese el sueldo"));
+    sueldo = parseFloat(prompt("Ingrese el sueldo"));
   }
   //le sumo el sueldo al acumulador
   acumulador += sueldo;
 
   //pregunto si quiere continuar
-  seguir = prompt("Agregar mas(responrder con 'si' o 'no')?");
+  seguir = prompt("Agregar más ('si' o 'no')?");
 
   //valido que responda correctamente 'si' or 'no'
   if (seguir != "si" || seguir != "no") {
-    seguir = prompt("Error! Para agregar mas solo responrder con 'si' o 'no'");
+    seguir = prompt("Error! Para agregar más solo responder con 'si' o 'no'");
   }
   //aumento el contador
   contadorSueldos++;
@@ -29,14 +29,14 @@ do {
 
 //imprime por consola
 console.log(
-  `El promedio del sueldo de los empleados de la empresa es ${
+  `El promedio del sueldo de l@s emplead@s de la empresa es ${
     acumulador / contadorSueldos
   }`
 );
 
 //imprime en html
 document.write(
-  `El promedio del sueldo de los empleados de la empresa es ${
+  `El promedio del sueldo de l@s emplead@s de la empresa es ${
     acumulador / contadorSueldos
   }`
 );
