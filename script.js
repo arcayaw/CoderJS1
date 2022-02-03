@@ -1,42 +1,27 @@
-let acumulador = 0;
-let contadorSueldos = 0;
-let seguir;
+let sumaPrecios = 0;
+let acumumladorProductos = 0;
+let seguir = "si";
+let iva = 0.21;
+let precioEnvio = 600;
 
 do {
-  //pido sueldo
-  let sueldo = parseFloat(prompt("Ingrese el sueldo del/la Emplead@"));
+  let precioProducto = parseInt(prompt("Ingrese el precio del producto"));
 
-  //valido que el sueldo sea mayor a cero.
-  if (sueldo <= 0) {
-    alert("Error! El valor debe ser mayor a cero");
-    sueldo = parseFloat(prompt("Ingrese el sueldo"));
+  if (precioProducto <= 0 || precioProducto == isNaN) {
+    precioProducto = parseInt(
+      prompt("Error! Ingrese un monto correcto (Mayor que cero)")
+    );
+  } else {
+    sumaPrecios += precioProducto;
   }
-  //le sumo el sueldo al acumulador
-  acumulador += sueldo;
 
-  //pregunto si quiere continuar
-  seguir = prompt("Agregar más ('si' o 'no')?");
+  seguir = prompt("desea seguir agregando productos");
 
-  //valido que responda correctamente 'si' or 'no'
-  if (seguir != "si" || seguir != "no") {
-    seguir = prompt("Error! Para agregar más solo responder con 'si' o 'no'");
-  }
-  //aumento el contador
-  contadorSueldos++;
-
-  // evlauo seguir
+  acumumladorProductos++;
 } while (seguir != "no");
 
-//imprime por consola
-console.log(
-  `El promedio del sueldo de l@s emplead@s de la empresa es ${
-    acumulador / contadorSueldos
-  }`
-);
-
-//imprime en html
 document.write(
-  `El promedio del sueldo de l@s emplead@s de la empresa es ${
-    acumulador / contadorSueldos
+  `La suma total de los productos es ${sumaPrecios}, el monto fintal con impuestos y envio incluidos es ${
+    sumaPrecios + sumaPrecios * iva + precioEnvio
   }`
 );
